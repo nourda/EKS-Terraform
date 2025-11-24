@@ -14,7 +14,7 @@ resource "aws_subnet" "nourda_subnet" {
   count = 2
   vpc_id                  = aws_vpc.nourda_vpc.id
   cidr_block              = cidrsubnet(aws_vpc.nourda_vpc.cidr_block, 8, count.index)
-  availability_zone       = element(["eu-east-1a", "eu-east-1b"], count.index)
+  availability_zone       = element(["us-east-1a", "us-east-1b"], count.index)
   map_public_ip_on_launch = true
 
   tags = {
